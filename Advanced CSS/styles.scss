@@ -1,0 +1,113 @@
+@import "./variables";
+
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  background-color: $backgroundColorBody;
+}
+
+.testimonal-container {
+  @include flexCenter();
+
+  width: $width;
+}
+
+header {
+  @include flexCenter();
+
+  font-family: $font;
+
+  letter-spacing: 0.04rem;
+  line-height: 1.6rem;
+
+  background-color: $backgroundColorCardHeader;
+  width: $width;
+  border-top: $border;
+  border-right: $border;
+  border-left: $border;
+
+  border-top-left-radius: $borderradius;
+  border-top-right-radius: $borderradius;
+
+  .header-container {
+    display: flex;
+    padding: 0.5rem;
+    margin: $borderradius;
+  }
+}
+
+main {
+  @include flexColumn();
+
+  width: $width;
+  border-left: $border;
+  border-right: $border;
+
+  .main-container {
+    display: flex;
+    justify-content: center;
+    background-color: $backgroundColorCardHeader;
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid 3px white;
+    object-fit: cover;
+    transform: translateY(50%);
+  }
+}
+
+footer {
+  @include flexColumn();
+
+  font-family: $font;
+  background-color: $backgroundColorCardFooter;
+  width: $width;
+  border: $border;
+
+  border-bottom: $border;
+  border-right: $border;
+  border-left: $border;
+
+  border-bottom-left-radius: $borderradius;
+  border-bottom-right-radius: $borderradius;
+
+  letter-spacing: 0.04rem;
+  line-height: 1.6rem;
+
+  .footer-container {
+    @include flexColumn();
+
+    color: white;
+    padding: 0.5rem;
+    margin: 1rem;
+
+    .footer-text {
+      text-align: center;
+      padding-top: 2.2rem;
+
+      h4 {
+        letter-spacing: 0.1rem;
+        font-weight: 500;
+        margin: -25px;
+      }
+
+      h5 {
+        font-weight: 100;
+        color: rgba(202, 196, 239, 0.726);
+      }
+    }
+  }
+}
